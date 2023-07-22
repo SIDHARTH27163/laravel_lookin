@@ -13,15 +13,19 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('fname');
-            $table->string('lname');
             $table->string('role')->default(2);
             $table->integer('p_status')->default(0);
             $table->integer('status')->default(0);
             $table->string('service')->default(0);
+            $table->string('fname');
+            $table->string('lname');
+          
             $table->string('email')->unique();
+            $table->string('image')->default(0);
+            $table->string('facebook')->default(0);
+            $table->string('website')->default(0);
+            $table->string('instagram')->default(0);
             $table->string('phone');
-            
             $table->integer('tc');
             $table->string('address');
             $table->string('city');

@@ -33,8 +33,8 @@ class authController extends Controller
                     return redirect('admin_dashboard');
                     case 1:
                         return redirect('seller');
-                // case 2:
-                //     return redirect('/admin');
+                case 2:
+                    return ('user');
                 //     break;
           
                

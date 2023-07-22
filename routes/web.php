@@ -137,5 +137,28 @@ Route::get("blogs" , [HomepageController::class,'all_blogs_list']);
 Route::get("blog/{text}" , [HomepageController::class,'single_blog']);
 Route::any("search_blogs" , [HomepageController::class,'search_blogs']);
 Route::get("share"  ,[HomepageController::class , 'share']);
+Route::get("tourist_places"  ,[HomepageController::class , 'tourist_places']);
+Route::get("filter_places/{filter}", [HomepageController::class,'filter_places']);
+Route::get("filter_blogs/{filter}", [HomepageController::class,'filter_blogs']);
+Route::any("search_places" , [HomepageController::class,'search_places']);
 // routes for home page ends
 Route::get("/logout" , [authController::class,'logout']);
+
+
+// footer components
+
+Route::get('termsandconditions', function () {
+    return view('footer.terms');
+});
+Route::get('privacyandpolicy', function () {
+    return view('footer.privacy');
+});
+Route::get('aboutus', function () {
+    return view('footer.about');
+});
+Route::get('contactus', function () {
+    return view('footer.contact');
+});
+
+
+// footer components ends

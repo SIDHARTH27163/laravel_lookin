@@ -10,6 +10,6 @@
     <div class="absolute bottom-0 left-0 right-0 px-4 py-2 backdrop-blur-sm bg-slate-950/30 rounded-b-xl">
         <a href={{ $url}} ><h1 class="text-2xl leading-tight text-white font-bold transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer hover:text-center duration-400 hover:text-yellow-400 ">
             {{ $text }}</h1></a>
-            <a href={{ $url}} > <h2 class="mt-2 text-lg text-gray-100 leading-tight cursor-pointer transform transition hover:scale-105 duration-500 ease-in-out  hover:text-center hover:text-yellow-400 font-normal">{{ $text }}</h2></a>
+          
     </div>
 </div>
