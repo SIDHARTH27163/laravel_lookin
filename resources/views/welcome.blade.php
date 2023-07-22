@@ -54,7 +54,7 @@
 {{-- section for crousel starts --}}
 <section class=" p-4  ">
    <div class="  p-2 w-full overflow-hidden">
-    <h1 class="text-xl leading-tight  mt-2 font-bold transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer text-center duration-400 text-orange-400 ">
+    <h1 class="text-xl leading-tight  font-bold transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer text-center duration-400 text-orange-400 ">
         Tourist Places In Dharamshala</h1>
         <h1 class="text-3xl leading-tight text-gray-900  font-bold transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer text-center duration-400 hover:text-yellow-400 ">
         Popular Tourist Destinations In Dharamshala</h1>
@@ -64,10 +64,10 @@
                     </p> 
     </div>
    </div>
-                    <div class=" p-4 shadow-xl shadow-blue-200 rounded-2xl">
+                    <div class=" p-1">
                         {{-- crousel starts --}}
                           
-<div class="flex flex-col ">
+<div class="flex flex-col px-4">
     <div class="flex items-center justify-center w-full h-full ">
         <div class="w-full relative flex items-center justify-center ">
           
@@ -122,11 +122,11 @@
 
 {{-- section for blogs starts here --}}
 
-<section class="p-4">
-    <div class="container mx-auto   lg:p-5 md:p-5 sm:p-4 p-2">
+<section class="p-2">
+    <div class="container mx-auto  p-2">
         <div class="px-2 ">
             <h2 class="text-center text-lg text-orange-500 leading-tight cursor-pointer transform transition hover:scale-105 duration-500 ease-in-out   font-normal">Blogs</h2>
-              <h1 class="text-3xl text-center mt-2 leading-tight text-gray-900  font-bold transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer  duration-400 hover:text-yellow-400 ">
+              <h1 class="text-3xl text-center  leading-tight text-gray-900  font-bold transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer  duration-400 hover:text-yellow-400 ">
                       Our Blogs</h1>
                     <div class="flex items-center justify-center">
                     <p class="text-gray-700  text-base lg:w-3/4 md:w-3/4 sm:w-full w-full cursor-pointer  text-justify">
@@ -135,10 +135,10 @@
             </div>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:p-4 md:p-4 sm:p-2 p-2 mt-2">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:p-4 md:p-4 sm:p-2 p-2 mt-1">
                         <!-- Card starts -->
                         @foreach ($blogs_data as $i=> $blog)
-                        <div class=" mx-auto bg-white shadow-xl shadow-blue-200 rounded-xl overflow-hidden">
+                        <div class=" mx-auto bg-white shadow-lg shadow-blue-200 rounded-xl overflow-hidden">
                            <a href={{'blog/'.urlencode($blog->title) }}> <img src="{{ asset('blog_images/'.$blog->image) }}" alt={{ $blog->location }} class="w-full h-60 "></a>
                             <div class="p-2">
                              <a href={{'blog/'.urlencode($blog->title) }}> <h1 class="text-xl font-semibold mb-2 text-justify">{{ Str::limit($blog->title,65) }}</h1></a>

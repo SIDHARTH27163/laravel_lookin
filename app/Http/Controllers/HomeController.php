@@ -34,7 +34,8 @@ class HomeController extends Controller
                 case 1:
                     return redirect('seller');
             
-           
+                    case 2:
+                        return ('user');
             default:
             return view('auth.signin');
 

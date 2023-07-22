@@ -152,3 +152,20 @@ html {
   ::-webkit-scrollbar-thumb:hover {
     background: #00b3bf; 
   }
+  .leaf1{
+	border-bottom-left-radius: 4rem;
+	border-top-right-radius: 4rem;
+   }
+   .leaf2{
+	border-bottom-right-radius: 4rem;
+	border-top-left-radius: 4rem;
+   }
+   .leaf3{
+	border-bottom-right-radius: 4rem;
+	border-top-left-radius: 4rem;
+   }
+   .leaf4{
+	border-top-right-radius: 4rem;
+	border-bottom-left-radius: 4rem;
+   }
+  

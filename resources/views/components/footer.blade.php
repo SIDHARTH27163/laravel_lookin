@@ -1,5 +1,5 @@
 <footer class="text-gray-200 bg-gray-900 body-font">
-  <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+  <div class="container px-5 py-7 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
     <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
       <a href="/" class="flex title-font font-medium items-center md:justify-start justify-center text-white">
        <img src="{{ asset('images/lookin_web.png') }}" alt="lookin dharamshala logo" class="h-20 w-20  transform transition hover:scale-110 duration-500 ease-in-out "/>
@@ -12,29 +12,40 @@
         <h2 class="title-font font-medium text-white tracking-widest text-md mb-3 underline">Policies And Our Story</h2>
         <nav class="list-none mb-10">
           <li>
-            <a href="our_lookin/terms&conditions.php" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Terms and Conditons </a>
+            <a href="termsandcondition" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Terms and Conditons </a>
           </li>
           <li>
-            <a href="our_lookin/privacy&policy.php" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Privacy Policies</a>
+            <a href="privacyandpolicy" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Privacy Policies</a>
           </li>
           
           <li>
-            <a href="our_lookin/about_us.php" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">About Us</a>
+            <a href="aboutus" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">About Us</a>
           </li>
           <li>
-            <a href="our_lookin/contact_us.php" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Contact Us</a>
+            <a href="contactus" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Contact Us</a>
           </li>
         </nav>
       </div>
       
       <div class="lg:w-1/4 md:w-1/2 w-1/2 px-4">
-        <h2 class="title-font font-medium text-white tracking-widest text-md mb-3 underline"> Blog Posts</h2>
+        <h2 class="title-font font-medium text-white tracking-widest text-md mb-3 underline">Some Links</h2>
        
       </div>
       <div class="lg:w-1/4 md:w-1/2 w-1/2 px-4">
-        <h2 class="title-font font-medium text-white tracking-widest text-md mb-3 underline">Tourist Destinations</h2>
-        
+        <h2 class="title-font font-medium text-white tracking-widest text-md mb-3 underline">Authentication</h2>
+        <nav class="list-none mb-10">
+        <li>
+          <a  href="/signin" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Login</a>
+        </li>
+        <li>
+          <a  href="/seller_signup" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Seller Signup</a>
+        </li>
+        <li>
+          <a  href="/signup" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">User Signup</a>
+        </li>
+        </nav>
       </div>
+      
       <div class="lg:w-1/4 md:w-1/2 w-1/2 px-4">
         <h2 class="title-font font-medium text-white tracking-widest text-md mb-3 underline"> Community</h2>
         <nav class="list-none mb-10">
