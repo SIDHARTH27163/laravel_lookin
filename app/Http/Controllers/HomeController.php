@@ -35,7 +35,7 @@ class HomeController extends Controller
                     return redirect('seller');
             
                     case 2:
-                        return ('user');
+                        return redirect('user_dashboard');
             default:
             return view('auth.signin');
 

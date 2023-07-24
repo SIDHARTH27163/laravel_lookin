@@ -122,7 +122,9 @@
     
 </section>
  
-
+ {{-- features starts --}}
+ @include('components/features')
+ {{-- features ends --}}
 {{-- sidebar ends --}}
 
 

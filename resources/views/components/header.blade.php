@@ -1,5 +1,5 @@
  <!--Nav-->
- <nav id="header" class="fixed w-full z-30 top-0 transparent shadow-sm">
+ <nav id="header" class="fixed w-full z-30 top-0 transparent ">
       <div class="w-full container mx-auto flex flex-wrap items-center justify-between  mt-0 py-1 lg:px-5 md:px-5 sm:px-2 px-1">
         
       <a href="/" class="flex flex-row hover:shadow-lg hover:rounded-full hover:scale-125 duration-300 ease-in-out">
@@ -28,17 +28,35 @@
         <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-1 lg:mt-0  lg:bg-transparent  p-2 lg:p-0 z-20 " id="nav-content">
           <ul class="list-reset lg:flex justify-end flex-1 items-center py-1">
           <li class="mr-0">
-              <a id="navitem" class="toggleColour  text-white inline-block text-lg hover:shadow-lg hover:rounded-xl   no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-4 font-bold" href="/">Home</a>
+              <a id="navitem" class="toggleColour hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl   no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="/">Home</a>
             </li>
             <li class="mr-0">
-              <a id="navitem1" class="toggleColour2  text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-4 font-bold" href="/blogs">Blogs</a>
+              <a id="navitem1" class="toggleColour2 hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="/blogs">Blogs</a>
+            </li>
+        
+            <li class="mr-0">
+              <a id="navitem2" class="toggleColour3 hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="/tourist_places">Tourist Places</a>
             </li>
             <li class="mr-0">
-              <a id="navitem2" class="toggleColour3  text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-4 font-bold" href="/tourist_places">Tourist Places</a>
+              <a id="navitem1" class="toggleColour6 hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="/services">Services</a>
+            </li>
+            @if(session()->has('user'))
+            <li class="mr-0">
+              <a id="navitem3" class="toggleColour4  text-white hover:bg-slate-900 hover:text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="/home">Dashboard</a>
             </li>
             <li class="mr-0">
-              <a id="navitem3" class="toggleColour4  text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-4 font-bold" href="signin">Signin</a>
+              <a id="navitem3" class="  text-rose-500 inline-block text-xl hover:shadow-lg hover:rounded-xl hover:bg-slate-900 hover:text-white  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="/logout">Logout</a>
             </li>
+          @else
+          
+
+          <li class="mr-0">
+            <a id="navitem3" class="toggleColour4  hover:bg-slate-900 hover:text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="signin">Signin</a>
+          </li>
+           @endif
+           
+         
+           
           </ul>
 
           
@@ -60,11 +78,12 @@
       var toToggle2 = document.querySelectorAll(".toggleColour2");
       var toToggle3 = document.querySelectorAll(".toggleColour3");
       var toToggle4 = document.querySelectorAll(".toggleColour4");
+      var toToggle6 = document.querySelectorAll(".toggleColour6");
       document.addEventListener("scroll", function () {
         /*Apply classes for slide in bar*/
         scrollpos = window.scrollY;
 
-        if (scrollpos > 10) {
+        if (scrollpos > 60) {
           header.classList.add("bg-gray-200");
           // navaction.classList.remove("bg-white");
           // navaction.classList.add("gradient");
@@ -87,6 +106,7 @@
             toToggle3[i].classList.remove("text-white");
             toToggle4[i].classList.add("text-slate-950");
             toToggle4[i].classList.remove("text-white");
+            toToggle6[i].classList.remove("text-white");
           }
           header.classList.add("shadow");header.classList.add("bg-gray-100");
           navcontent.classList.remove("bg-gray-100");
@@ -115,6 +135,8 @@
             toToggle3[i].classList.remove("text-slate-950");
             toToggle4[i].classList.add("text-white");
             toToggle4[i].classList.remove("text-slate-950");
+            toToggle6[i].classList.add("text-white");
+            toToggle6[i].classList.remove("text-slate-950");
           }
 
           header.classList.remove("shadow");

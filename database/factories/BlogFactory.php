@@ -20,12 +20,12 @@ class BlogFactory extends Factory
             //
             'title' => $this->faker->sentence(),
            
-            'image' => '1689668762.jpg',
+            'image' => '1690179849.jpg',
             'description' => $this->faker->text(),
             'additional_description' => $this->faker->text(),
             'date'=>date('d-m-Y'),
-            'location' => "Kharota",
-            'category' => "Travel",
+            'location' => "Bangotu",
+            'category' => "Valley",
             'user_name' => "Lookin Dharamshala",
            
         ];

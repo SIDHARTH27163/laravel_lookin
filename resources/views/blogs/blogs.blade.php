@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Lookin Dharamshala</title>
+    <title>Lookin Dharamshala | Dharamshala Blogs</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
   
     <meta name="description" content="" />
-    <meta name="keywords" content=" Dharamshala tourist attractions, dharamshala ,lookin dharamshala Things to do in Dharamshala, ookin , look in , lookin dharamshala,Dharamshala travel tips , dharamshalacity , Dharamshala adventure activities" />
+    <meta name="keywords" content=" Dharamshala Blogs, Dharamshala tourist attractions, dharamshala ,lookin dharamshala Things to do in Dharamshala, ookin , look in , lookin dharamshala,Dharamshala travel tips , dharamshalacity , Dharamshala adventure activities" />
     <meta name="author" content="Lookin Dharamshala" />
     <link rel="canonical" href={{ request()->url() }} />
     <meta name="generator" content="All in One SEO (AIOSEO) 4.3.8" />

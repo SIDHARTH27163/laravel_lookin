@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Lookin Dharamshala</title>
+    <title>Lookin Dharamshala| Dharamshala Blogs</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
     @foreach ($blog_data as $blog)
     <meta name="description" content="{{ $blog->location }}:{{ $blog->title }}" />
-    <meta name="keywords" content="{{ $blog->location }},{{ $blog->title }}, Dharamshala tourist attractions, dharamshala ,lookin dharamshala Things to do in Dharamshala, ookin , look in , lookin dharamshala,Dharamshala travel tips , dharamshalacity , Dharamshala adventure activities" />
+    <meta name="keywords" content="{{ $blog->location }},{{ $blog->title }}, Dharamshala Blogs, Dharamshala tourist attractions, dharamshala ,lookin dharamshala Things to do in Dharamshala, ookin , look in , lookin dharamshala,Dharamshala travel tips , dharamshalacity , Dharamshala adventure activities" />
     <meta name="author" content="Lookin Dharamshala" />
     <link rel="canonical" href={{ request()->url() }} />
     <meta name="generator" content="All in One SEO (AIOSEO) 4.3.8" />
@@ -110,7 +110,7 @@
                <div class="flex flex-col lg:p-5 md:p-5 sm:p-2 p-1">
                 <div class="flex items-center justify-center">
                    
-                        <h1 class="text-3xl font-bold text-blue-400">{{ $blog->title }}</h1>
+                        <h1 class="text-2xl font-bold text-blue-700">{{ $blog->title }}</h1>
                        
                     
                 </div>
@@ -162,7 +162,10 @@
     {{-- crousel ends --}}
                     </div>
                     <div class="lg:w-1/2 md:w-1/2 w-full lg:p-5 md:p-5 p-2 ">
-                        <h1 class="text-justify text-rose-500 text-3xl font-semibold leading-tight ">{{ $blog->location }}</h1>
+                       @if ($blog->location != 0)
+                       <h1 class="text-justify text-rose-500 text-3xl font-semibold leading-tight ">{{ $blog->location }}</h1>
+                           
+                       @endif
                         <h1 class="text-justify text-gray-800 text-xl font-semibold leading-tight ">{{ $blog->title }}</h1>
                         
                         <div class="flex lg:flex-row md:flex-row sm:flex-col flex-col gap-x-2 "><p class="text-blue-800 font-bold text-sm">Published on {{ $blog->date }}</p>
@@ -210,7 +213,7 @@
                             <!-- Card starts -->
                             @foreach ($cat as  $c_d)
                             <div class=" mx-auto bg-white shadow-xl shadow-blue-200 rounded-xl overflow-hidden">
-                                <img src="{{ asset('blog_images/'.$c_d->image) }}" alt={{ $c_d->location }} class="w-full h-60 ">
+                                <img src="{{ asset('blog_images/'.$c_d->image) }}" alt={{ $c_d->category }} class="w-full h-60 ">
                                 <div class="p-2">
                                     <a href={{'/blog/'.urlencode($c_d->title) }}> <h1 class="text-xl font-semibold mb-2 text-justify">{{ Str::limit($c_d->title,65) }}</h1></a>
                                      <div class="flex lg:flex-row md:flex-row sm:flex-col flex-col gap-x-2 "><p class="text-blue-800 font-bold text-sm">Published on {{ $c_d->date }}</p>

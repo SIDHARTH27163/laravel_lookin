@@ -11,7 +11,23 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
 
-
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+  
+    <meta name="description" content="" />
+    <meta name="keywords" content=" Dharamshala tourist attractions, dharamshala ,lookin dharamshala Things to do in Dharamshala, ookin , look in , lookin dharamshala,Dharamshala travel tips , dharamshalacity , Dharamshala adventure activities" />
+    <meta name="author" content="Lookin Dharamshala" />
+    <link rel="canonical" href={{ request()->url() }} />
+    <meta name="generator" content="All in One SEO (AIOSEO) 4.3.8" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="lookindharamshala: Lookin Dharamshala , lookindharamshala,Latest Blogs, Blogs , Tourist Destinations , lookindharamshala &amp; Records | What You Want We Have It" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="lookindharamshala.com" />
+    <meta property="og:description" content="What You Want We Have It." />
+    <meta property="og:url" content={{ request()->url() }} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="lookindharamshala.com" />
+    <meta name="twitter:description" content="What You Want We Have It." />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 
     <!-- Styles -->
     @vite('resources/css/app.css')
@@ -158,6 +174,7 @@
                     </div>
                   
                 </section>
+               
                  {{-- tourist places ends --}}
             </div>
         </div>
@@ -168,7 +185,9 @@
     
 </section>
  
-
+ {{-- features starts --}}
+ @include('components/features')
+ {{-- features ends --}}
 {{-- sidebar ends --}}
 
 
