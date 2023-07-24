@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('user_id')->default(0);
             $table->string('user_name');
             $table->string('category');
-            $table->string('location');
+            $table->string('location')->default(0);
             $table->longText('title');
             $table->longText('description');
             $table->longText('additional_description');

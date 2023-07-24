@@ -32,7 +32,7 @@ class Admin
             return redirect()->route('seller');
         }
         if($user->role==2){
-            return redirect()->route('user');
+            return redirect()->route('user_dashboard');
         }
     }
     }

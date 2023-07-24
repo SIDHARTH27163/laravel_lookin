@@ -27,14 +27,18 @@ class authController extends Controller
         }
         try{
             if(Auth::attempt($credentials)){
+               
                 $user_role=Auth::user()->role; 
+                $user=Auth::user();
+                $request->session()->put('user', $user);
+
                     switch($user_role){
                 case 0:
                     return redirect('admin_dashboard');
                     case 1:
                         return redirect('seller');
                 case 2:
-                    return ('user');
+                    return redirect('user_dashboard');
                 //     break;
           
                
@@ -127,7 +131,7 @@ class authController extends Controller
         $request->session()->invalidate();
      
         $request->session()->regenerateToken();
-     
+        $request->session()->forget('user');
         return redirect('/');
     }
 }

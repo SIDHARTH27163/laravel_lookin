@@ -12,7 +12,7 @@
         <h2 class="title-font font-medium text-white tracking-widest text-md mb-3 underline">Policies And Our Story</h2>
         <nav class="list-none mb-10">
           <li>
-            <a href="termsandcondition" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Terms and Conditons </a>
+            <a href="termsandconditions" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Terms and Conditons </a>
           </li>
           <li>
             <a href="privacyandpolicy" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Privacy Policies</a>

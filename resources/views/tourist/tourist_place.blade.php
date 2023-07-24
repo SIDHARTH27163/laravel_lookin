@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Lookin Dharamshala</title>
+    <title>Lookin Dharamshala|Tourist Places</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
@@ -17,7 +17,7 @@
     <link rel="canonical" href={{ request()->url() }} />
     <meta name="generator" content="All in One SEO (AIOSEO) 4.3.8" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="lookindharamshala: Lookin Dharamshala , lookindharamshala,Latest Blogs, Blogs , Tourist Destinations , lookindharamshala &amp; Records | What You Want We Have It" />
+    <meta property="og:site_name" content="{{ $place->location }},lookindharamshala: Lookin Dharamshala , lookindharamshala,Latest Blogs, Blogs , Tourist Destinations , lookindharamshala &amp; Records | What You Want We Have It" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="lookindharamshala.com" />
     <meta property="og:description" content="What You Want We Have It." />
@@ -202,7 +202,9 @@
             
        
         </section>
-         
+          {{-- features starts --}}
+          @include('components/features')
+          {{-- features ends --}}
 {{-- category data ends --}}
     @include('components/footer')
 </body>

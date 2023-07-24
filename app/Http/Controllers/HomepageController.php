@@ -16,13 +16,30 @@ class HomepageController extends Controller
           
             $t_data=  DB::table('tourist_places')->where('status' , 1)->orderBy('location' , 'desc')->limit(6)->get();
             $blogs_data=  DB::table('blogs')->where('status' , 1)->orderBy('updated_at')->limit(6)->get();
+            $service_data=  DB::table('services')->where('status' , 1)->orderBy('service_name')->paginate(6);
             // display emnds
-             return view('welcome', ['tdata'=>$t_data , 'blogs_data'=>$blogs_data]);
+             return view('welcome', ['tdata'=>$t_data , 'blogs_data'=>$blogs_data , 'services'=>$service_data]);
            // return ($cat_data);
             }catch(\Exception $e){
                 dd($e);
          }
     }
+
+
+public function all_services(){
+    try{
+          
+      
+        $service_data=  DB::table('services')->where('status' , 1)->orderBy('service_name')->paginate(9);
+        // display emnds
+        return view('services', [ 'services'=>$service_data]);
+       // return ($cat_data);
+        }catch(\Exception $e){
+            dd($e);
+     }
+}
+
+
     public function get_single_place($text){
         try{
         $s_text=urldecode($text);

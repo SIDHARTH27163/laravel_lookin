@@ -9,6 +9,8 @@ use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\TouristController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\usersController;
+use App\Http\Controllers\serviceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -112,16 +114,19 @@ Route::get('update_t_status_0/{id}' , [TouristController::class,'update_t_status
 Route::get('delete_t/{id}' , [TouristController::class,'delete_t']);
 // admin tourist places routes ends
 
-
+// admin add services 
+Route::get('manage_services' , [serviceController::class , 'get_services'])->name('admin_services')->middleware('admin');
+Route::post('add_service' , [serviceController::class , 'add_service'])->name('add_service')->middleware('admin');
+Route::get('change_service_status/{id}',[serviceController::class , 'change_service_status'])->name('change_service_status')->middleware('admin');
+Route::get('change_to/{id}',[serviceController::class , 'change_to'])->name('change_to')->middleware('admin');
+// admin add services ends
+// admin add services ends
 // admin Routes ends
 
 Route::get('seller',function(){
     return view('seller.seller_index');
 })->name('seller')->middleware('seller');
 
-Route::get('user',function(){
-    return ('user view');
-})->name('user')->middleware('user');
 
 
 
@@ -141,6 +146,7 @@ Route::get("tourist_places"  ,[HomepageController::class , 'tourist_places']);
 Route::get("filter_places/{filter}", [HomepageController::class,'filter_places']);
 Route::get("filter_blogs/{filter}", [HomepageController::class,'filter_blogs']);
 Route::any("search_places" , [HomepageController::class,'search_places']);
+Route::get("services" , [HomepageController::class,'all_services']);
 // routes for home page ends
 Route::get("/logout" , [authController::class,'logout']);
 
@@ -162,3 +168,36 @@ Route::get('contactus', function () {
 
 
 // footer components ends
+
+
+
+// user or blogger routes
+
+
+
+Route::get('user_dashboard',function(){
+    return view('user.user_dashboard');
+})->name('user_dashboard')->middleware('user');
+
+
+
+Route::get("upload_blogs" , [usersController::class,'blogs_req'])->name('upload_blogs')->middleware('user');
+
+
+Route::post("upload_blog" , [usersController::class,'upload_blog'])->name('upload_blog')->middleware('user');
+Route::get("user_upload_gallery/{id}" , [usersController::class,'user_upload_gallery'])->name('user_upload_gallery/{id}')->middleware('user');
+
+Route::post('upload_blogs_gallery_user/{id}' , [usersController::class,'user_upload_blogs_gallery']);
+Route::get("blogs_list" , [usersController::class,'blogs_list'])->name('blogs_list')->middleware('user');
+Route::get("user_profile" , [usersController::class,'user_profile'])->name('user_profile')->middleware('user');
+Route::post("update_profile_img" , [usersController::class,'update_profile_img'])->name('update_profile_img')->middleware('user');
+
+Route::get('user_notifications',function(){
+    return view('user.user_notifications');
+})->name('user_notifications')->middleware('user');
+Route::get('request_admin',function(){
+    return view('user.user_notifications');
+})->name('request_admin')->middleware('user');
+Route::get('blog_comments',function(){
+    return view('user.user_notifications');
+})->name('blog_comments')->middleware('user');

@@ -24,13 +24,13 @@ class User
             return $next($request);
         }
         if($user->role==0){
-            return redirect()->route('admin');
+            return redirect()->route('admin_dashboard');
         }
         if($user->role==1){
             return redirect()->route('seller');
         }
         if($user->role==2){
-            return redirect()->route('user');
+            return redirect()->route('user_dashboard');
         }
     }
 }

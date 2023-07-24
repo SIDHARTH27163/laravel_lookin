@@ -209,12 +209,9 @@ try{
     $data = $request->only('files');
     $validator = Validator::make($data, [
     
-        'files' => 'required',
-        //'files' => 'max:5',
-        'files.*' =>'required|mimes:jpeg,png,jpg',
-    
-        'files' => [new UploadCount()],
-    
+        'files' => 'required|array|min:1|max:5',
+        'files.*' => 'required|image|mimes:jpeg,png , jpg', // Add allowed mime types and max size as per your requirements
+        
     
         
     ]);
@@ -305,7 +302,7 @@ public function update_b_status_0($id, Request $request){
 public function delete_b($id, Request $request){
     try{
     DB::delete('delete from blogs where id = ?',[$id]);
-    return Redirect::to('admin_blogs')->with('message', 'Blog Deleted Successfully');
+    return redirect()->back()->with('message', 'Blog Deleted Successfully');
     }catch(\Exception $e){
         dd($e);
  }catch(\Exception $e){

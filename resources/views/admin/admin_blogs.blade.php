@@ -250,8 +250,10 @@
                      <a href="{{url('update_b_status_1/'.$ublog->id)}}" class="font-medium text-blue-500 dark:text-blue-600 hover:underline">Approve</a><br>
                      @endif
                     
-
+                     @if ($ublog->user_id==0)
                      <a href="{{url('upload_gallery/'.$ublog->id)}}" class="font-medium text-green-400 dark:text-green-500 hover:underline">Upload Gallery</a><br>
+                     @endif
+                   
                   </td>
               </tr>
                @endforeach
@@ -350,7 +352,7 @@
                                     
               </td>
               
-              <td class="px-3 py-4">
+              <td class="px-3 py-4 text-justify">
                  {{$blog->title}}
               </td>
               <td class="px-3 py-4">
@@ -360,15 +362,15 @@
                  {{$blog->date}}
               </td>
               <td class="px-1 py-4 text-center">
-                 <a href="{{url('delete_b/'.$blog->id)}}" class="font-medium text-rose-600 dark:text-rose-500 hover:underline">Delete</a><br>
+               <a href="{{url('delete_b/'.$blog->id)}}" class="font-medium text-rose-600 dark:text-rose-500 hover:underline">Delete</a><br>
                  @if(  $blog->status == 1)
                  <a href="{{url('update_b_status_0/'.$blog->id)}}" class="font-medium text-orange-400 dark:text-orange-500 hover:underline">Revoke</a><br>
                  @else
                  <a href="{{url('update_b_status_1/'.$blog->id)}}" class="font-medium text-blue-500 dark:text-blue-600 hover:underline">Approve</a><br>
                  @endif
                 
-
-                 <a href="{{url('upload_gallery/'.$blog->id)}}" class="font-medium text-green-400 dark:text-green-500 hover:underline">Upload Gallery</a><br>
+                
+                
               </td>
              
           </tr>
