@@ -72,9 +72,9 @@
                         <h1 class="text-3xl text-center  leading-tight text-gray-900  font-bold transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer  duration-400 hover:text-yellow-400 ">
                                 Our Blogs</h1>
                               <div class="flex items-center justify-center">
-                              <p class="text-gray-700  text-base lg:w-3/4 md:w-3/4 sm:w-full w-full cursor-pointer  text-justify">
+                              <h1 class="text-gray-700  text-base lg:w-3/4 md:w-3/4 sm:w-full w-full cursor-pointer  text-justify">
                                   Welcome to our captivating blog series, exclusively brought to you by Lookin Dharamshala! Join us on an exhilarating journey as we uncover the hidden gems, cultural treasures, and breathtaking adventures waiting to be discovered in the picturesque town of Dharamshala.
-                                      </p> 
+                                      </h1> 
                       </div>
                               </div>
           
@@ -83,19 +83,19 @@
                                   <!-- Card starts -->
                                   @foreach ($b_data as $i=>  $blog)
                                   <div class=" mx-auto bg-white shadow-lg shadow-blue-200 rounded-xl overflow-hidden">
-                                      <a href={{'blog/'.urlencode($blog->title) }}> <img src="{{ asset('blog_images/'.$blog->image) }}" alt={{ $blog->location }} class="w-full h-60 "></a>
+                                      <a href={{'/blog/'.urlencode($blog->title) }}> <img src="{{ asset('blog_images/'.$blog->image) }}" alt={{ $blog->location }} class="w-full h-60 transform transition hover:scale-105 duration-500 ease-in-out"></a>
                                        <div class="p-2">
-                                        <a href={{'blog/'.urlencode($blog->title) }}> <h1 class="text-xl font-semibold mb-2 text-justify">{{ Str::limit($blog->title,65) }}</h1></a>
-                                         <div class="flex lg:flex-row md:flex-row sm:flex-col flex-col gap-x-2 "><p class="text-blue-800 font-bold text-sm">Published on {{ $blog->date }}</p>
-                                           <a href={{'user_blogs/'.urlencode($blog->user_name) }}><p class="text-rose-500 font-bold text-sm hover:scale-105">Published by {{ $blog->user_name }}</p></a>
-                                       
-                                       </div>
+                                        <a href={{'/blog/'.urlencode($blog->title) }}> <h1 class="text-xl text-blue-700 mb-2 text-justify">{{ Str::limit($blog->title,65) }}</h1></a>
+                                        <div class="flex lg:flex-row md:flex-row sm:flex-col flex-col gap-x-1 "><p class="text-blue-800  text-xs">Published on {{ $blog->date }}</p>
+                                          <a href={{'/user_blogs/'.urlencode($blog->user_name) }}><p class="text-rose-500  text-xs  hover:scale-105">Blog By {{ $blog->user_name }}</p></a>
+                                      
+                                      </div>
                                        <a class="flex flex-row text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-800">
                                           <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                           <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path>
                                         </svg>{{ $blog->location }}</a>
-                                         <a href={{'blog/'.urlencode($blog->title) }}><p class="text-gray-700 mt-2 text-justify">{{ Str::limit($blog->description,100) }}</p></a>
-                                         <a href={{'blog/'.urlencode($blog->title) }} class="block mt-4 text-blue-500 hover:text-blue-600 hover:scale-105">Read more</a>
+                                         <a href={{'/blog/'.urlencode($blog->title) }}><p class="text-gray-700 mt-2 text-justify">{{ Str::limit($blog->description,100) }}</p></a>
+                                         <a href={{'/blog/'.urlencode($blog->title) }} class="block mt-4 text-blue-500 hover:text-blue-600 hover:scale-105">Read more</a>
                                        </div>
                                      </div>
                                     @endforeach

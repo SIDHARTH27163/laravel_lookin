@@ -1,6 +1,6 @@
 
 <div class="flex flex-shrink-0 relative lg:w-80 lg:h-64 sm:w-full w-full sm:h-64 h-64 cursor-pointer">
-    <a href={{ $url }}><img src="{{ asset( $image ) }}" alt={{ $text }}  class="image_crousel  rounded-2xl hover:scale-105 duration-500 ease-in-out cursor-pointer"/></a>
+    <a href={{ $url }}><img src="{{ asset( $image ) }}" alt={{ $text }}  class="image_crousel  rounded-2xl transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer"/></a>
     {{-- <div class="absolute w-full bg-slate-950 p-2 backdrop-brightness-50  bg-opacity-30 bottom-0 rounded-b-2xl ">
         
         <div class="flex h-full  items-center justify-center p-1  ">
@@ -8,8 +8,20 @@
         </div>
     </div> --}}
     <div class="absolute bottom-0 left-0 right-0 px-4 py-2 backdrop-blur-sm bg-slate-950/30 rounded-b-xl">
-        <a href={{ $url}} ><h1 class="text-2xl leading-tight text-white font-bold transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer hover:text-center duration-400 hover:text-yellow-400 ">
+        <a href={{ $url}} ><h1 class="text-2xl leading-tight text-white font-normal transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer hover:text-center duration-400 hover:text-yellow-400 ">
             {{ $text }}</h1></a>
           
+    </div>
+    <div class="bubbles">
+        <div class="bubble bg-rose-600"></div>
+      
+      <div class="bubble bg-rose-600"></div>
+      <div class="bubble bg-sky-600"></div>
+      <div class="bubble bg-indigo-600"></div>
+      <div class="bubble bg-lime-600"></div>
+      <div class="bubble bg-orange-600"></div>
+      <div class="bubble bg-yellow-600"></div>
+      <div class="bubble bg-emerald-600"></div>
+      <div class="bubble bg-pink-600"></div>
     </div>
 </div>

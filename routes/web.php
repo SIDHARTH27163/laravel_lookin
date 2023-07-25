@@ -139,6 +139,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get("/" , [HomepageController::class,'homepage']);
 Route::get("tourist_places/{text}" , [HomepageController::class,'get_single_place']);
 Route::get("blogs" , [HomepageController::class,'all_blogs_list']);
+Route::get("user_blogs/{name}" , [HomepageController::class,'user_blogs_list']);
 Route::get("blog/{text}" , [HomepageController::class,'single_blog']);
 Route::any("search_blogs" , [HomepageController::class,'search_blogs']);
 Route::get("share"  ,[HomepageController::class , 'share']);
@@ -165,6 +166,7 @@ Route::get('aboutus', function () {
 Route::get('contactus', function () {
     return view('footer.contact');
 });
+
 
 
 // footer components ends

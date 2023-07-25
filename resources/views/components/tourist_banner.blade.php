@@ -1,7 +1,18 @@
-<div class="relative  w-full  bg-cover bg-center bg-no-repeat bg-fixed " style="background-image:url('../images/bg.jpg')">
+<div class=" w-full  bg-cover bg-center bg-no-repeat bg-fixed " style="background-image:url('../images/bg.jpg')">
 
-
-    <div class=" py-20 w-full  backdrop-brightness-50  ">
+  <div class="bubbles">
+    <div class="bubble bg-rose-600"></div>
+  
+  <div class="bubble bg-pink-600"></div>
+  <div class="bubble bg-sky-600"></div>
+  <div class="bubble bg-indigo-600"></div>
+  <div class="bubble bg-lime-600"></div>
+  <div class="bubble bg-orange-600"></div>
+  <div class="bubble bg-yellow-600"></div>
+  <div class="bubble bg-emerald-600"></div>
+  <div class="bubble bg-pink-600"></div>
+</div> 
+    <div class=" py-24 w-full  backdrop-brightness-50  ">
     <div class=" container mx-auto px-10">
     <h1 class="text-3xl leading-tight text-white font-bold transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer  hover:text-yellow-400 ">
                     Enjoy the holidays with <br/><span class="text-yellow-400 lg:text-5xl md:text-5xl sm:text-3xl text-3xl text-h">Lookin Dharamshala</span></h1>

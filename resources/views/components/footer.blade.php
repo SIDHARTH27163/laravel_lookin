@@ -28,8 +28,21 @@
       </div>
       
       <div class="lg:w-1/4 md:w-1/2 w-1/2 px-4">
-        <h2 class="title-font font-medium text-white tracking-widest text-md mb-3 underline">Some Links</h2>
-       
+        
+        <nav class="list-none mb-10">
+          <li>
+            <a href="https://lookindharamshala.com/public/sidharth/sidharth_guleria.php" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Developer Profile </a>
+          </li>
+          <li>
+            <a  href="/blogs" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Blogs</a>
+          </li>
+          <li>
+            <a  href="/tourist_places" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">Tourist Places</a>
+          </li>
+          <li>
+            <a  href="/services" class="text-gray-200 hover:text-blue-700 decoration-teal-700 cursor-pointer  transform transition hover:text-xl duration-500 ease-in-out">All Services</a>
+          </li>
+        </nav>
       </div>
       <div class="lg:w-1/4 md:w-1/2 w-1/2 px-4">
         <h2 class="title-font font-medium text-white tracking-widest text-md mb-3 underline">Authentication</h2>

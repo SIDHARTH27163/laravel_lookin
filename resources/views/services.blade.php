@@ -44,8 +44,19 @@
 
 
 
-<div class="relative  w-full  bg-cover bg-center bg-no-repeat bg-fixed " style="background-image:url('./images/bg.jpg')">
-
+<div class=" w-full  bg-cover bg-center bg-no-repeat bg-fixed " style="background-image:url('./images/bg.jpg')">
+    <div class="bubbles">
+        <div class="bubble bg-rose-600"></div>
+      
+      <div class="bubble bg-rose-600"></div>
+      <div class="bubble bg-sky-600"></div>
+      <div class="bubble bg-indigo-600"></div>
+      <div class="bubble bg-lime-600"></div>
+      <div class="bubble bg-orange-600"></div>
+      <div class="bubble bg-yellow-600"></div>
+      <div class="bubble bg-emerald-600"></div>
+      <div class="bubble bg-pink-600"></div>
+    </div>
 
 <div class=" py-24 w-full  backdrop-brightness-50  ">
     {{-- <h1  class="text-yellow-400 font-bold text-h">Lookin Dharamshala</h1> --}}
@@ -91,13 +102,13 @@
     <!-- Article -->
     <article class="overflow-hidden rounded-xl shadow-lg shadow-sky-200 ">
 
-        <a href="#">
-            <img alt= {{ $service->service_name."Lookin Dharamshala"}} class="block h-64 w-full" src="{{ asset('service_images/'.$service->image) }}">
+        <a  href={{ $service->page_link }}>
+            <img alt= {{ $service->service_name."Lookin Dharamshala"}} class="block h-64 w-full transform transition hover:scale-105 duration-500 ease-in-out" src="{{ asset('service_images/'.$service->image) }}">
         </a>
 
         <header class="flex items-center justify-between leading-tight p-1">
             <h1 class="text-lg font-bold">
-                <a class="no-underline hover:underline text-black" href="#">
+                <a class="no-underline hover:underline text-black"  href={{ $service->page_link }}>
                    {{ $service->service_name }}
                 </a>
             </h1>
@@ -105,16 +116,13 @@
         </header>
 
         <footer class="flex items-center justify-between leading-none p-1">
-            <a class="flex items-center no-underline hover:underline text-black" href="#">
+            <a class="flex items-center no-underline hover:underline text-black"  href={{ $service->page_link }}>
                 <img alt= {{ $service->service_name."Lookin Dharamshala"}} class="block rounded-full h-10 w-10" src="{{ asset('service_images/'.$service->image) }}">
                 <p class="ml-2 text-sm">
                     {{ $service->service_name }}
                 </p>
             </a>
-            <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
-                <span class="hidden">Like</span>
-                <i class="fa fa-heart"></i>
-            </a>
+      
         </footer>
 
     </article>

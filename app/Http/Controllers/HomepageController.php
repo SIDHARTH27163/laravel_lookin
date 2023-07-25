@@ -215,6 +215,22 @@ public function search_places(Request $request){
 }
 
 
-
+public function user_blogs_list($name){
+    try{
+        $filter_text=urldecode($name);
+         $filter_data=  DB::table('blogs')->where('status' , 1)->where('user_name' , $filter_text)->orderBy('title')->paginate(6);
+         $cats=DB::table('blogs_cats')->orderBy('category')->get();
+         $locs=DB::table('blogs_locations')->orderBy('location')->get();
+         if (count ( $filter_data ) > 0)
+         return view('blogs.user_blogs', [ 'filter_data'=>$filter_data , 'message'=>'', 'cats'=>$cats, 'locs'=>$locs]);
+         else
+             //return ( 'No Result found for' .$filter .' try Another filter');
+             $message='No Result found for location or category named ' .$filter .' Try Another filter';
+             return view('blogs.user_blogs', [ 'message'=>$message ,'filter_data'=>$filter_data,  'cats'=>$cats, 'locs'=>$locs]);
+     
+    }catch(\Exception $e){
+        dd($e);
+    }
+}
     }
 

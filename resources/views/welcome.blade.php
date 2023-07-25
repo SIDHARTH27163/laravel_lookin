@@ -40,22 +40,39 @@
 <body class="leading-normal tracking-normal " style="font-family: 'Source Sans Pro', sans-serif;">
 @include('components/header')
 <section class="" id="banner">
+    <div class="bubbles">
+        <div class="bubble bg-rose-600"></div>
+      
+      <div class="bubble bg-rose-600"></div>
+      <div class="bubble bg-sky-600"></div>
+      <div class="bubble bg-indigo-600"></div>
+      <div class="bubble bg-lime-600"></div>
+      <div class="bubble bg-orange-600"></div>
+      <div class="bubble bg-yellow-600"></div>
+      <div class="bubble bg-emerald-600"></div>
+      <div class="bubble bg-pink-600"></div>
+    </div>
 
 
 
-
-<div class="relative  w-full  bg-cover bg-center bg-no-repeat bg-fixed " style="background-image:url('./images/bg.jpg')">
+<div class="  w-full  bg-cover bg-center bg-no-repeat bg-fixed " style="background-image:url('./images/bg.jpg')">
 
 
 <div class=" py-24 w-full  backdrop-brightness-50  ">
     {{-- <h1  class="text-yellow-400 font-bold text-h">Lookin Dharamshala</h1> --}}
-    <div class=" container mx-auto lg:px-10 mdLpx-6 sm:px-4 px-4">
-        <h1 class="leading-tight  font-bold  cursor-pointer text-yellow-400 ">
-                    <span class="text-sky-300  text-h ">Lookin Dharamshala</span></h1>
-        
-                    <p class="text-white text-base text-justify mb-1 lg:w-1/2 md:w-1/2 sm:w-3/4 w-full cursor-pointer transform transition hover:scale-105 duration-500 ease-in-out ">
-                        Lookin Dharamshala is a cutting-edge multi-service platform that offers a diverse range of conveniences and solutions for travelers and residents alike. From hassle-free accommodation bookings in picturesque Dharamshala to personalized travel itineraries, local tour guidance, and curated experiences, Lookin Dharamshala serves as the ultimate one-stop destination for all your travel needs. With a seamless user interface and a plethora of services at your fingertips, Lookin Dharamshala promises to enhance your journey and make your stay in this beautiful destination truly unforgettable.
-                        </p>
+    <div class=" container mx-auto  flex lg:flex-row md:flex-row sm:flex-col flex-col py-2">
+<div class=" lg:px-10 md:px-6 sm:px-4 px-4  lg:w-3/4 md:w-3/4 sm:w-full py-2">
+    <h1 class="leading-tight  font-bold  cursor-pointer text-yellow-400 ">
+        <span class="text-sky-300  text-h ">Lookin Dharamshala</span></h1>
+
+        <p class="text-white text-base text-justify mb-1 lg:w-4/5 md:w-4/5 sm:w-full w-full cursor-pointer transform transition hover:scale-105 duration-500 ease-in-out ">
+            Lookin Dharamshala is a cutting-edge multi-service platform that offers a diverse range of conveniences and solutions for travelers and residents alike. From hassle-free accommodation bookings in picturesque Dharamshala to personalized travel itineraries, local tour guidance, and curated experiences, Lookin Dharamshala serves as the ultimate one-stop destination for all your travel needs. With a seamless user interface and a plethora of services at your fingertips, Lookin Dharamshala promises to enhance your journey and make your stay in this beautiful destination truly unforgettable.
+            </p>
+</div>
+<div class="lg:w-1/4 md:w-1/4 sm:w-full w-full   flex items-center justify-center">
+    <img src="{{ asset('images/my_logo.png') }}" class="block h-48 w-48 transform transition hover:scale-105 duration-500 ease-in-out" alt="lookindharamshala web logo"/>
+
+</div>       
     </div>
 </div>
 
@@ -69,6 +86,7 @@
 {{-- banner ends --}}
 {{-- section for crousel starts --}}
 <section class=" p-4  ">
+    
    <div class="  p-2 w-full overflow-hidden">
     <h1 class="text-xl leading-tight  font-bold transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer text-center duration-400 text-orange-400 ">
         Tourist Places In Dharamshala</h1>
@@ -133,6 +151,7 @@
 
 {{-- list sercices starts --}}
 <section class="p-2 w-full">
+    
     <div class="  p-2 w-full overflow-hidden">
         <h1 class="text-xl leading-tight  font-bold transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer text-center duration-400 text-orange-400 ">
            Services In Lookin Dharamshala</h1>
@@ -153,13 +172,13 @@
     <!-- Article -->
     <article class="overflow-hidden rounded-xl shadow-lg shadow-sky-200 ">
 
-        <a href="#">
-            <img alt= {{ $service->service_name."Lookin Dharamshala"}} class="block h-64 w-full" src="{{ asset('service_images/'.$service->image) }}">
+        <a href={{$service->page_link }}>
+            <img alt= {{ $service->service_name."Lookin Dharamshala"}} class="block h-64 w-full transform transition hover:scale-105 duration-500 ease-in-out" src="{{ asset('service_images/'.$service->image) }}">
         </a>
 
         <header class="flex items-center justify-between leading-tight p-1">
             <h1 class="text-lg font-bold">
-                <a class="no-underline hover:underline text-black" href="#">
+                <a class="no-underline hover:underline text-black" href={{ $service->page_link }}>
                    {{ $service->service_name }}
                 </a>
             </h1>
@@ -167,16 +186,13 @@
         </header>
 
         <footer class="flex items-center justify-between leading-none p-1">
-            <a class="flex items-center no-underline hover:underline text-black" href="#">
-                <img alt= {{ $service->service_name."Lookin Dharamshala"}} class="block rounded-full h-10 w-10" src="{{ asset('service_images/'.$service->image) }}">
+            <a class="flex items-center no-underline hover:underline text-black" href={{ $service->page_link }}>
+                <img alt= {{ $service->service_name."Lookin Dharamshala"}} class="block rounded-full h-10 w-10 transform transition hover:scale-105 duration-500 ease-in-out" src="{{ asset('service_images/'.$service->image) }}">
                 <p class="ml-2 text-sm">
                     {{ $service->service_name }}
                 </p>
             </a>
-            <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
-                <span class="hidden">Like</span>
-                <i class="fa fa-heart"></i>
-            </a>
+          
         </footer>
 
     </article>
@@ -204,6 +220,7 @@
 {{-- section for blogs starts here --}}
 
 <section class="p-2">
+    
     <div class="container mx-auto  p-2">
         <div class="px-2 ">
             <h2 class="text-center text-lg text-orange-500 leading-tight cursor-pointer transform transition hover:scale-105 duration-500 ease-in-out   font-normal">Blogs</h2>
@@ -220,11 +237,11 @@
                         <!-- Card starts -->
                         @foreach ($blogs_data as $i=> $blog)
                         <div class=" mx-auto bg-white shadow-lg shadow-blue-200 rounded-xl overflow-hidden">
-                           <a href={{'blog/'.urlencode($blog->title) }}> <img src="{{ asset('blog_images/'.$blog->image) }}" alt={{ $blog->location }} class="w-full h-60 "></a>
+                           <a href={{'blog/'.urlencode($blog->title) }}> <img src="{{ asset('blog_images/'.$blog->image) }}" alt={{ $blog->location }} class="w-full h-60 transform transition hover:scale-105 duration-500 ease-in-out"></a>
                             <div class="p-2">
-                             <a href={{'blog/'.urlencode($blog->title) }}> <h1 class="text-xl font-semibold mb-2 text-justify">{{ Str::limit($blog->title,65) }}</h1></a>
-                              <div class="flex lg:flex-row md:flex-row sm:flex-col flex-col gap-x-2 "><p class="text-blue-800 font-bold text-sm">Published on {{ $blog->date }}</p>
-                                <a href={{'user_blogs/'.urlencode($blog->user_name) }}><p class="text-rose-500 font-bold text-sm hover:scale-105">Published by {{ $blog->user_name }}</p></a>
+                             <a href={{'blog/'.urlencode($blog->title) }}> <h1 class="text-xl font-normal mb-1 text-justify text-blue-600">{{ Str::limit($blog->title,65) }}</h1></a>
+                              <div class="flex lg:flex-row md:flex-row sm:flex-col flex-col gap-x-2 "><p class="text-blue-800  text-xs">Published on {{ $blog->date }}</p>
+                                <a href={{'user_blogs/'.urlencode($blog->user_name) }}><p class="text-rose-500  text-xs font-semibold hover:scale-105">Published by {{ $blog->user_name }}</p></a>
                             
                             </div>
                               <a href={{'blog/'.urlencode($blog->title) }}><p class="text-gray-700 mt-2 text-justify">{{ Str::limit($blog->description,100) }}</p></a>
