@@ -158,8 +158,8 @@
                                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gap-6 md:gap-6 sm:gap-4 gap-4 lg:p-4 sm:p-1 mt-4">
                                         <!-- Card starts -->
                                         @foreach ($cat_d as  $c_d)
-                                        <div class=" mx-auto bg-white shadow-lg` shadow-blue-100 rounded-xl overflow-hidden">
-                                            <img src="{{ asset('places_images/'.$c_d->file) }}" alt={{ $c_d->location }} class="w-full lg:h-60 md:h-60 sm:h-56  h-44 ">
+                                        <div class=" mx-auto bg-white shadow-lg shadow-blue-100 rounded-xl overflow-hidden">
+                                            <img src="{{ asset('places_images/'.$c_d->file) }}" alt={{ $c_d->location }} class="w-full lg:h-60 md:h-60 sm:h-56  h-44 transform transition hover:scale-105 duration-500 ease-in-out">
                                             <div class="p-2">
                                               <h1 class="lg:text-xl md:text-xl sm:taxt-lg text-base font-thin mb-2 text-justify">{{ Str::limit($c_d->heading,65) }}</h1>
                                              <div class="lg:visible md:visible sm:invisible invisible lg:h-auto md:h-auto h-0">

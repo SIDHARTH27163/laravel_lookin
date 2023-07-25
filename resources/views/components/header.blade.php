@@ -1,13 +1,13 @@
  <!--Nav-->
  <nav id="header" class="fixed w-full z-30 top-0 transparent ">
-      <div class="w-full container mx-auto flex flex-wrap items-center justify-between  mt-0 py-1 lg:px-5 md:px-5 sm:px-2 px-1">
+      <div class="w-full flex flex-wrap items-center justify-between  mt-0 py-1 l px-2">
         
-      <a href="/" class="flex flex-row hover:shadow-lg hover:rounded-full hover:scale-125 duration-300 ease-in-out">
+      <a href="/" class="flex flex-row hover:shadow-lg hover:rounded-full transform transition hover:scale-110 duration-500 ease-in-out">
       <img src="{{ asset('images/lookin_web.png') }}" class="lg:w-14 md:w-14 sm:w-12 w-12 lg:h-14 md:h-14 sm:h-12 h-12 " alt="lookindharamshala web logo"/>
        
      <div class="flex flex-col px-1">
-     <p class="toggleColour text-yellow-400 lg:text-2xl md:text-xl sm:text-ms text-base font-bold">Lookin Dharamshala</p> 
-     <p class="toggleColour1 text-gray-200 lg:text-base md:text-base sm:text-xs text-xs font-fold">What You Think , We Have It </p> 
+     <h1 class="toggleColour text-yellow-400 lg:text-2xl md:text-xl sm:text-ms text-base font-bold">Lookin Dharamshala</h1> 
+     <h1 class="toggleColour1 text-gray-200 lg:text-base md:text-base sm:text-xs text-xs font-fold">What You Think , We Have It </h1> 
      </div> 
     
     </a>
@@ -28,30 +28,30 @@
         <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-1 lg:mt-0  lg:bg-transparent  p-2 lg:p-0 z-20 " id="nav-content">
           <ul class="list-reset lg:flex justify-end flex-1 items-center py-1">
           <li class="mr-0">
-              <a id="navitem" class="toggleColour hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl   no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="/">Home</a>
+              <a id="navitem" class="toggleColour hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl   no-underline  transform transition hover:scale-105 duration-500 ease-in-out py-2 px-4 font-bold" href="/">Home</a>
             </li>
             <li class="mr-0">
-              <a id="navitem1" class="toggleColour2 hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="/blogs">Blogs</a>
+              <a id="navitem1" class="toggleColour2 hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  transform transition hover:scale-105 duration-500 ease-in-out py-2 px-4 font-bold" href="/blogs">Blogs</a>
             </li>
         
             <li class="mr-0">
-              <a id="navitem2" class="toggleColour3 hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="/tourist_places">Tourist Places</a>
+              <a id="navitem2" class="toggleColour3 hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  transform transition hover:scale-105 duration-500 ease-in-out py-2 px-4 font-bold" href="/tourist_places">Tourist Places</a>
             </li>
             <li class="mr-0">
-              <a id="navitem1" class="toggleColour6 hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="/services">Services</a>
+              <a id="navitem1" class="toggleColour6 hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  transform transition hover:scale-105 duration-500 ease-in-out py-2 px-4 font-bold" href="/services">Services</a>
             </li>
             @if(session()->has('user'))
             <li class="mr-0">
-              <a id="navitem3" class="toggleColour4  text-white hover:bg-slate-900 hover:text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="/home">Dashboard</a>
+              <a id="navitem3" class="toggleColour4  text-white hover:bg-slate-900 hover:text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  transform transition hover:scale-105 duration-500 ease-in-out py-2 px-4 font-bold" href="/home">Dashboard</a>
             </li>
             <li class="mr-0">
-              <a id="navitem3" class="  text-rose-500 inline-block text-xl hover:shadow-lg hover:rounded-xl hover:bg-slate-900 hover:text-white  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="/logout">Logout</a>
+              <a id="navitem3" class="  text-rose-500 inline-block text-xl hover:shadow-lg hover:rounded-xl hover:bg-slate-900 hover:text-white  no-underline  transform transition hover:scale-105 duration-500 ease-in-out py-2 px-4 font-bold" href="/logout">Logout</a>
             </li>
           @else
           
 
           <li class="mr-0">
-            <a id="navitem3" class="toggleColour4  hover:bg-slate-900 hover:text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  hover:scale-105 duration-300 ease-in-out py-2 px-2 font-bold" href="signin">Signin</a>
+            <a id="navitem3" class="toggleColour4 text-white hover:bg-slate-900 hover:text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  transform transition hover:scale-105 duration-500 ease-in-out py-2 px-4 font-bold" href="signin">Signin</a>
           </li>
            @endif
            

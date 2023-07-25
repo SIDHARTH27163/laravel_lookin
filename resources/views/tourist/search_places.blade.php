@@ -89,8 +89,8 @@
                                         @foreach ($search_data as  $f_d)
                                        
 
-                                        <div class=" mx-auto bg-white shadow-lg` shadow-blue-100 rounded-xl overflow-hidden">
-                                            <img src="{{ asset('places_images/'.$f_d->file) }}" alt={{ $f_d->location }} class="w-full lg:h-60 md:h-60 sm:h-56  h-44 ">
+                                        <div class=" mx-auto bg-white shadow-lg shadow-blue-100 rounded-xl overflow-hidden">
+                                            <img src="{{ asset('places_images/'.$f_d->file) }}" alt={{ $f_d->location }} class="w-full lg:h-60 md:h-60 sm:h-56  h-44 transform transition hover:scale-105 duration-500 ease-in-out">
                                             <div class="p-2">
                                               <h1 class="lg:text-xl md:text-xl sm:taxt-lg text-base font-thin mb-2 text-justify">{{ Str::limit($f_d->heading,65) }}</h1>
                                              <div class="lg:visible md:visible sm:invisible invisible lg:h-auto md:h-auto h-0">

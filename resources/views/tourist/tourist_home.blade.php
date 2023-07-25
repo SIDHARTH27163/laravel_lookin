@@ -87,7 +87,7 @@
                          <div class="w-full relative flex items-center justify-center ">
                            
                              <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden ">
-                                 <div id="slider" class="h-full flex lg:gap-6 md:gap-6 gap-2 items-center justify-start transition ease-out duration-900 ">
+                                 <div id="slider" class="h-full flex lg:gap-6 md:gap-6 gap-2 items-center justify-start  ">
                                      
                                  
                                      @foreach ($c_data as $i=> $place)
@@ -139,7 +139,7 @@
                                        
 
                                         <div class=" mx-auto bg-white shadow-lg shadow-blue-200 rounded-xl overflow-hidden">
-                                            <img src="{{ asset('places_images/'.$c_d->file) }}" alt={{ $c_d->location }} class="w-full lg:h-60 md:h-60 sm:h-56  h-44 ">
+                                            <img src="{{ asset('places_images/'.$c_d->file) }}" alt={{ $c_d->location }} class="w-full lg:h-60 md:h-60 sm:h-56  h-44 transform transition hover:scale-105 duration-500 ease-in-out">
                                             <div class="p-2">
                                               <h1 class="lg:text-xl md:text-xl sm:taxt-lg text-base font-thin mb-2 text-justify">{{ Str::limit($c_d->heading,65) }}</h1>
                                              <div class="lg:visible md:visible sm:invisible invisible lg:h-auto md:h-auto h-0">

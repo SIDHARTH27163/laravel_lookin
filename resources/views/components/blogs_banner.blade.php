@@ -1,7 +1,18 @@
-<div class="relative  w-full  bg-cover bg-center bg-no-repeat bg-fixed " style="background-image:url('{{ asset('images/bg.jpg')}}')">
+<div class="  w-full  bg-cover bg-center bg-no-repeat bg-fixed " style="background-image:url('{{ asset('images/bg.jpg')}}')">
+    <div class="bubbles">
+        <div class="bubble bg-rose-600"></div>
+      
+      <div class="bubble bg-sky-300"></div>
+      <div class="bubble bg-sky-600"></div>
+      <div class="bubble bg-indigo-600"></div>
+      <div class="bubble bg-lime-600"></div>
+      <div class="bubble bg-orange-600"></div>
+      <div class="bubble bg-yellow-600"></div>
+      <div class="bubble bg-emerald-600"></div>
+      <div class="bubble bg-pink-600"></div>
+    </div> 
         
-        
-    <div class=" py-28 w-full  backdrop-brightness-50  ">
+    <div class=" py-20 w-full  backdrop-brightness-50  ">
         {{-- container starts --}}
         {{-- <h1  class="text-yellow-400 font-bold text-h">Lookin Dharamshala</h1> --}}
         <div class=" container mx-auto lg:px-10 md:px-6 sm:px-4 px-4">
