@@ -40,6 +40,11 @@
 <body class="leading-normal tracking-normal " style="font-family: 'Source Sans Pro', sans-serif;">
 @include('components/header')
 <section class="" id="banner">
+    
+
+
+
+<div class="  w-full  bg-cover bg-center bg-no-repeat bg-fixed " style="background-image:url('./images/bg.jpg')">
     <div class="bubbles">
         <div class="bubble bg-rose-600"></div>
       
@@ -52,11 +57,6 @@
       <div class="bubble bg-emerald-600"></div>
       <div class="bubble bg-pink-600"></div>
     </div>
-
-
-
-<div class="  w-full  bg-cover bg-center bg-no-repeat bg-fixed " style="background-image:url('./images/bg.jpg')">
-
 
 <div class=" py-24 w-full  backdrop-brightness-50  ">
     {{-- <h1  class="text-yellow-400 font-bold text-h">Lookin Dharamshala</h1> --}}

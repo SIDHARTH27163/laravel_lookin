@@ -49,10 +49,7 @@ return view('auth.signin');
     return redirect( '/home'
 );
 
-//    if(session()->has('user')){
-//     return ('/home');
-//    }
-//    return view('auth.signin');
+
 })->name('signin');
 Route::post("user_signin" , [authController::class,'index']);
 // user signup
@@ -60,6 +57,9 @@ Route::post("user_signup" , [authController::class,'user_signup']);
 Route::get('signup', function () {
     return view('auth.signup');
 });
+
+Route::get("seller_signup" , [authController::class,'seller_signup']);
+Route::post("seller_signin" , [authController::class,'seller_signin']);
 // admin routes
 Route::get('admin_dashboard',function(){
    return view('admin.admin_home');
@@ -69,11 +69,6 @@ Route::get('admin_blogs' , [BlogsController::class,'admin_blogs'])->name('admin_
 
 Route::get("manage_blogs_location" , [BlogsController::class,'location_list'])->name('manage_blogs_location')->middleware('admin');
 Route::get("manage_blogs_category" , [BlogsController::class,'category_lists'])->name('manage_blogs_category')->middleware('admin');
-
-//  Route::get('manage_blogs_category',function(){
-//     return view('admin.admin_blogs_cat');
-//  })->name('manage_blogs_category')->middleware('admin');
-// update_b_status
 
 
 //  admin form actons
@@ -121,6 +116,14 @@ Route::get('change_service_status/{id}',[serviceController::class , 'change_serv
 Route::get('change_to/{id}',[serviceController::class , 'change_to'])->name('change_to')->middleware('admin');
 // admin add services ends
 // admin add services ends
+// admin services sub category starts
+Route::get('manage_services_category',[serviceController::class , 'manage_services_category'])->name('manage_services_category')->middleware('admin');
+Route::post('add_service_category' , [serviceController::class , 'add_service_category'])->name('add_service_category')->middleware('admin');
+Route::get('delete_service_cat/{id}',[serviceController::class , 'delete_service_cat'])->name('delete_service_cat')->middleware('admin');
+// admin sub category ends
+
+
+
 // admin Routes ends
 
 Route::get('seller',function(){

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Service;
+use App\Models\Services_cat;
 use Illuminate\Support\Facades\DB;
 use Image;
 use App\Rules\UploadCount;
@@ -16,11 +17,14 @@ class serviceController extends Controller
         try{
              $service_data=  DB::table('services')->where('status' , 0)->orderBy('service_name')->paginate(4);
              $servicedata=  DB::table('services')->where('status' , 1)->orderBy('service_name')->paginate(4);
+             $ucount=  DB::table('services')->where('status' , 0)->orderBy('service_name')->count();
+             $acount=  DB::table('services')->where('status' , 1)->orderBy('service_name')->count();
+             $count=  DB::table('services')->orderBy('service_name')->count();
             // $loc_data=  DB::table('blogs_locations')->orderBy('id' , 'desc')->get();
             // display  blogs both uproved and un uproved 
           
             // display emnds
-             return view('admin.manage_services', ['servicedata'=>$service_data  , 'service_data'=>$servicedata]);
+             return view('admin.manage_services', ['servicedata'=>$service_data  , 'service_data'=>$servicedata , 'ucount'=>$ucount , 'acount'=>$acount , 'total'=>$count]);
             
             //return ($service_data);
             }catch(\Exception $e){
@@ -113,5 +117,71 @@ public function change_to($id, Request $request){
     
         return redirect()->back()->with('message', 'Service De-Activated Activated For All Users');
     }
+}
+
+public function manage_services_category(Request $request){
+   try{
+
+     
+
+
+    $servicedata=  DB::table('services')->where('status' , 1)->orderBy('service_name')->get();
+    $servicecats=  DB::table('services')
+    ->join('services_cats' , "services.id" , 'services_cats.service_id')
+    ->where('status' , 1)->orderBy('service_name')->paginate(5);
+    // $data = [];
+    // foreach($servicecat as $cat) {
+    //     $data[] = $cat;
+
+    // }
+  //  return($servicecat);
+    return view('admin.manage_services_category', ['services'=>$servicedata , 'servicescats'=>$servicecats]);
+   }catch(\Exception $e){
+    dd($e);
+}
+}
+
+public function add_service_category(Request $request){
+    try{
+        $data = $request->only('service' , 'service_category');
+        $validator = Validator::make($data, [  
+    
+        'service' => 'required',//|unique:services
+       
+        'service_category'=>'required|string|unique:services_cats',
+        
+    ]);
+    if ($validator->fails()) {
+
+       
+        $messages = $validator->messages();
+
+        
+            return redirect()->back()->withErrors($messages);
+            
+    }else{
+        
+        DB::update('update services set has_category = 1 where id = ?', [$request->service]);
+        $service=Services_cat::create([
+            'service_id'=>$request->service,
+           
+            'service_category'=>$request->service_category,
+            
+           
+        ]);
+        return redirect()->back()->with('message', 'Service Category Added Successfully');
+    }
+    }
+    catch(\Exception $e){
+        dd($e);
+    }
+}
+public function delete_service_cat($id){
+try{
+    DB::delete('delete from services_cats where id = ?',[$id]);
+    return redirect()->back()->with('delete_msg', 'Services Category Deleted Successfully');
+}catch(\Exception $e){
+    dd($e);
+}
 }
 }

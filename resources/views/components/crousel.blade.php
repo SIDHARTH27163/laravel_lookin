@@ -12,16 +12,7 @@
             {{ $text }}</h1></a>
           
     </div>
-    <div class="bubbles">
-        <div class="bubble bg-rose-600"></div>
-      
-      <div class="bubble bg-rose-600"></div>
-      <div class="bubble bg-sky-600"></div>
-      <div class="bubble bg-indigo-600"></div>
-      <div class="bubble bg-lime-600"></div>
-      <div class="bubble bg-orange-600"></div>
-      <div class="bubble bg-yellow-600"></div>
-      <div class="bubble bg-emerald-600"></div>
-      <div class="bubble bg-pink-600"></div>
-    </div>
+ 
 </div>
+
+

@@ -224,11 +224,8 @@ function category_lists(){
             $data = $request->only('files');
             $validator = Validator::make($data, [
             
-                'files' => 'required',
-                //'files' => 'max:5',
-                'files.*' =>'required|mimes:jpeg,png,jpg',
-            
-                'files' => [new UploadCount()],
+                'files' => 'required|array|min:1|max:5',
+                'files.*' => 'required|image|mimes:jpeg,png , jpg', // Add allowed mime types and max size as per your requirements
             ]);
         
             //Send failed response if request is not valid
