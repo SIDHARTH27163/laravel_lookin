@@ -68,10 +68,10 @@
 
 
                 <p class="text-gray-100 text-2xl font-bold">
-                    Use your email to signup as buyer / blogger
+                    Use your email to signup as seller
                 </p>
 
-                <form class="px-8 py-5 pb-8  my-4 bg-white rounded-xl shadow-xl" action="user_signup" method="post">
+                <form class="px-8 py-5 pb-8  my-4 bg-white rounded-xl shadow-xl" action="seller_signin" method="post">
                     @csrf
                     @method('post')
                     <div class="mb-1 md:flex md:justify-between">
@@ -83,7 +83,8 @@
                                 class="w-full px-3 py-2 text-sm leading-tight text-slate-900 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                 id="firstName" type="text" name="fname" placeholder="First Name" />
                             @if ($errors->has('fname'))
-                                <p class="text-xs italic text-red-500 text-start"> First Name feild is required </p>
+                                <p class="text-xs italic text-red-500 text-start font-semibold"> First Name feild is
+                                    required </p>
                             @endif
                         </div>
                         <div class="md:ml-2 w-full">
@@ -94,7 +95,8 @@
                                 class="w-full px-3 py-2 text-sm leading-tight text-slate-900 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                 id="lastName" type="text" name="lname" placeholder="Last Name" />
                             @if ($errors->has('lname'))
-                                <p class="text-xs italic text-red-500 text-start">last Name feild is required </p>
+                                <p class="text-xs italic text-red-500 text-start font-semibold">last Name feild is
+                                    required </p>
                             @endif
                         </div>
                     </div>
@@ -107,7 +109,8 @@
                                 class="w-full px-3 py-2  text-sm leading-tight text-slate-900 border border-gray-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                 id="email" type="text" name="email" placeholder="johndoe@gmail.com" />
                             @if ($errors->has('email'))
-                                <p class="text-xs italic text-red-500 text-start">{{ $errors->first('email') }}</p>
+                                <p class="text-xs italic text-red-500 text-start font-semibold">
+                                    {{ $errors->first('email') }}</p>
                             @endif
                         </div>
                         <div class="md:ml-2 w-full">
@@ -118,7 +121,8 @@
                                 class="w-full px-3 py-2  text-sm leading-tight text-slate-900 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                 id="tel" type="text" name="phone" placeholder="0000000000" />
                             @if ($errors->has('phone'))
-                                <p class="text-xs italic text-red-500 text-start">{{ $errors->first('phone') }}</p>
+                                <p class="text-xs italic text-red-500 text-start font-semibold">
+                                    {{ $errors->first('phone') }}</p>
                             @endif
                         </div>
                     </div>
@@ -132,10 +136,31 @@
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                             placeholder="Enter You Address here..."></textarea>
                         @if ($errors->has('address'))
-                            <p class="text-xs italic text-red-500 text-start">{{ $errors->first('address') }}</p>
+                            <p class="text-xs italic text-red-500 text-start font-semibold">
+                                {{ $errors->first('address') }}</p>
                         @endif
                     </div>
+                    <div class="mb-1">
+                        <label class="block mb-1 text-sm font-bold text-slate-900 text-start" for="password">
+                            Select Service
+                        </label>
+                        <select id="countries" name="service"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option value="">Choose a Service</option>
+                            @foreach ($service_data as $i => $service)
+                                <option value={{ $service->service_name }}>{{ $service->service_name }}</option>
+                            @endforeach
 
+                        </select>
+
+
+
+                        @if ($errors->has('service'))
+                            <p class="text-xs italic text-red-500 text-start font-semibold">
+                                {{ $errors->first('service') }}
+                            </p>
+                        @endif
+                    </div>
 
                     <div class="mb-1 md:flex md:justify-between">
                         <div class="mb-1 md:mr-2 md:mb-0 w-full">
@@ -146,7 +171,8 @@
                                 class="w-full px-3 py-2 text-sm leading-tight text-slate-900 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                 id="lastName" type="text" name="city" placeholder="Enter City" />
                             @if ($errors->has('city'))
-                                <p class="text-xs italic text-red-500 text-start">{{ $errors->first('city') }}</p>
+                                <p class="text-xs italic text-red-500 text-start font-semibold">
+                                    {{ $errors->first('city') }}</p>
                             @endif
                         </div>
                         <div class="mb-1 md:mr-2 md:mb-0 w-full">
@@ -157,7 +183,8 @@
                                 class="w-full px-3 py-2 text-sm leading-tight text-slate-900 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                 id="lastName" type="text" name="state" placeholder="Enter State" />
                             @if ($errors->has('state'))
-                                <p class="text-xs italic text-red-500 text-start">{{ $errors->first('state') }}</p>
+                                <p class="text-xs italic text-red-500 text-start font-semibold">
+                                    {{ $errors->first('state') }}</p>
                             @endif
                         </div>
                         <div class="md:ml-2 w-full">
@@ -172,7 +199,8 @@
 
                             </select>
                             @if ($errors->has('country'))
-                                <p class="text-xs italic text-red-500 text-start">{{ $errors->first('country') }}</p>
+                                <p class="text-xs italic text-red-500 text-start font-semibold">
+                                    {{ $errors->first('country') }}</p>
                             @endif
                         </div>
                     </div>
@@ -185,7 +213,8 @@
                                 class="w-full px-3 py-2  text-sm leading-tight text-slate-900 border border-gray-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                                 id="password" type="password" name="password" placeholder="******************" />
                             @if ($errors->has('password'))
-                                <p class="text-xs italic text-red-500 text-start">{{ $errors->first('password') }}</p>
+                                <p class="text-xs italic text-red-500 text-start font-semibold">
+                                    {{ $errors->first('password') }}</p>
                             @endif
                         </div>
                         <div class="md:ml-2 w-full">
@@ -197,7 +226,7 @@
                                 id="c_password" type="password" name="confirm_password"
                                 placeholder="******************" />
                             @if ($errors->has('confirm_password'))
-                                <p class="text-xs italic text-red-500 text-start">
+                                <p class="text-xs italic text-red-500 text-start font-semibold">
                                     {{ $errors->first('confirm_password') }}</p>
                             @endif
                         </div>
@@ -212,7 +241,7 @@
                                 data-modal-toggle="defaultModal">Privay Policy</span> </label>
                     </div>
                     @if ($errors->has('tc'))
-                        <p class="text-xs italic text-red-500 text-start">{{ $errors->first('tc') }}</p>
+                        <p class="text-xs italic text-red-500 text-start font-semibold">{{ $errors->first('tc') }}</p>
                     @endif
                     <div class="mt-2 text-center">
                         <button
@@ -233,8 +262,8 @@
                     </div>
                     <div class="text-center">
                         <a class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                            href="/seller_signup">
-                            Create Account As Seller / Register As seller
+                            href="/signup">
+                            Create Account As Buyer / Register As Buyer
                         </a>
                     </div>
                     <div class="text-center">
@@ -270,7 +299,7 @@
                         </button>
                     </div>
                     <!-- Modal body -->
-                    <div class="p-2 ">
+                    <div class="p-2">
                         <div class="p-1 text-black">
                             <h1 class="text-2xl text-blue-900 underline">1. Application of Policy</h1>
                             <ul class="p-2 list-disc list-inside">
@@ -426,9 +455,9 @@
                     </div>
                     <!-- Modal footer -->
                     <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b ">
-                        <button data-modal-hide="defaultModal" .................
+                        <button data-modal-hide="defaultModal" 
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Close</button>
-                        <button data-modal-hide="defaultModal" .................
+                        <button data-modal-hide="defaultModal" 
                             class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 ">Decline</button>
                     </div>
                 </div>

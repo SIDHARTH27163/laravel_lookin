@@ -131,8 +131,11 @@ public function admin_blogs(){
         // display  blogs both uproved and un uproved 
         $u_blogs=  DB::table('blogs')->where('status' , 0)->orderBy('id' , 'desc')->paginate(10);
         $a_blogs=  DB::table('blogs')->where('status' , 1)->orderBy('id' , 'desc')->paginate(10);
+        $total_u=  DB::table('blogs')->where('status' , 0)->count();
+        $total_a=  DB::table('blogs')->where('status' , 1)->count();
+        $total=  DB::table('blogs')->count();
         // display emnds
-         return view('admin.admin_blogs', ['catdata'=>$cat_data , 'locdata'=>$loc_data ,'udata'=>$u_blogs,'adata'=>$a_blogs]);
+         return view('admin.admin_blogs', ['catdata'=>$cat_data , 'locdata'=>$loc_data ,'udata'=>$u_blogs,'adata'=>$a_blogs , 'total_u'=>$total_u , 'total_a'=>$total_a , 'total'=>$total]);
        // return ($cat_data);
         }catch(\Exception $e){
             dd($e);

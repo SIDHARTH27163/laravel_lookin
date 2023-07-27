@@ -111,13 +111,35 @@
             </ul>
          </li>
          <li>
-            <a href="manage_services" class="flex items-center p-2  rounded-lg text-white hover:bg-slate-900 ">
-               <svg class="flex-shrink-0 w-5 h-5  transition duration-75 text-gray-400 group-hover: group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+            <button type="button" class="flex items-center w-full p-2  transition duration-75 rounded-lg group  text-white hover:bg-gray-900" aria-controls="dropdown-example_services" data-collapse-toggle="dropdown-example_services">
+               <svg class="flex-shrink-0 w-5 h-5  transition duration-75 text-rose-600 group-hover: group-hover:text-blue-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
                   <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"/>
                </svg>
-               <span class="flex-1 ml-3 whitespace-nowrap">Manage Services</span>
-            </a>
+                
+                
+
+
+
+                  <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Services Management</span>
+                  <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+            <ul id="dropdown-example_services" class="hidden py-2 space-y-2">
+           
+                  <li>
+                     <a href="manage_services" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-1 group  text-white hover:bg-gray-900 font-roboto">Manage Services</a>
+                  </li>
+                  
+                  <li>
+                     <a href="manage_services_category" class="flex items-center w-full p-2  transition duration-75 rounded-lg pl-1 group  text-white hover:bg-gray-900 font-roboto">Manage Services Category</a>
+                  </li>
+                 
+                
+              
+                 
+                 
+            </ul>
          </li>
+     
          <li>
             <a href="/all_users" class="flex items-center p-2  rounded-lg text-white hover:bg-slate-900 ">
                <svg class="flex-shrink-0 w-5 h-5  transition duration-75 text-gray-400 group-hover: group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
@@ -127,14 +149,7 @@
             </a>
          </li>
          
-         <li>
-            <a href="#" class="flex items-center p-2  rounded-lg text-white hover:bg-slate-900 ">
-               <svg class="flex-shrink-0 w-5 h-5  transition duration-75 text-gray-400 group-hover: group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
-               </svg>
-               <span class="flex-1 ml-3 whitespace-nowrap">Sign In</span>
-            </a>
-         </li>
+         
          <li>
             <a href="logout" class="flex items-center p-2  rounded-lg text-white hover:bg-slate-900 ">
                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">

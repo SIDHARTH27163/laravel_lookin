@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('service_name');
             $table->string('image');
-            
+            $table->integer('has_category')->default(0);
             $table->string('page_link');
             $table->integer('for_user')->default(0);
             $table->integer('status')->default(0);

@@ -2,27 +2,35 @@
 @section('content')  
 <div class="p-4 border-2 border-dashed rounded-lg border-gray-700 ">
     <div class="grid grid-cols-3 gap-4 mb-4">
-       <div class="flex items-center justify-center h-24 rounded  bg-gray-800">
-          <p class="text-2xl text-gray-400 ">
-             <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-             </svg>
+       <a href="#unapproved" class="cursor-pointer transform transition hover:scale-105 duration-500 ease-in-out">
+         <div class="flex flex-col items-center justify-center h-24 rounded  bg-rose-600">
+            <p class="text-2xl text-gray-100 ">
+              Unapproved Services
+             </p>
+             <p class="text-2xl text-gray-100 ">
+               {{ $ucount }}
+             </p>
+          </div>
+       </a>
+       <a href="#approved" class="cursor-pointer transform transition hover:scale-105 duration-500 ease-in-out">
+         <div class="flex flex-col items-center justify-center h-24 rounded  bg-green-600">
+            <p class="text-2xl text-white ">
+              Approved Services
+             </p>
+             <p class="text-2xl text-white ">
+               {{ $acount }}
+             </p>
+          </div>
+       </a>
+       <a href="#approved" class="cursor-pointer transform transition hover:scale-105 duration-500 ease-in-out">
+       <div class="flex flex-col items-center justify-center h-24 rounded  bg-blue-500">
+         <p class="text-2xl text-gray-100 ">
+           Total Services Added
           </p>
-       </div>
-       <div class="flex items-center justify-center h-24 rounded  bg-gray-800">
-          <p class="text-2xl text-gray-400 ">
-             <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-             </svg>
+          <p class="text-2xl text-gray-100 ">
+            {{ $total}}
           </p>
-       </div>
-       <div class="flex items-center justify-center h-24 rounded  bg-gray-800">
-          <p class="text-2xl text-gray-400 ">
-             <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
-             </svg>
-          </p>
-       </div>
+       </div></a>
     </div>
     <div class="flex items-start  w-full justify-start">
        
@@ -47,7 +55,7 @@
       {{-- add message ends --}}
      </div>
     <p class="text-2xl italic underline font-bold">Add Service Here</p>
-    <div class="flex items-center justify-center h-auto p-2 mb-4 rounded  bg-gray-800">
+    <div class="flex items-center justify-center h-auto p-2 mb-4 rounded  bg-amber-600">
        {{-- forn starts --}}
       
 <form action="add_service" method="post" class="bg-white p-5 w-3/4 rounded-lg" enctype="multipart/form-data">
@@ -90,9 +98,9 @@
    <div class="w-full p-4 ">
       
       <p class="toggleColour text-gray-900 text-2xl  font-bold underline py-2">Un Approved Services</p>
-      <div class="relative overflow-auto shadow-md sm:rounded-lg">
+      <div class="relative overflow-auto shadow-md sm:rounded-lg" id="unapproved">
          <table class="w-full text-sm text-left text-gray-500 ">
-             <thead class="text-xs text-gray-100 uppercase bg-gray-700 ">
+             <thead class="text-xs text-gray-100 uppercase bg-rose-600 ">
                  <tr>
                      <th scope="col" class="px-3 py-3">
                         Index
@@ -185,9 +193,9 @@
 <div class="w-full p-4 ">
       
    <p class="toggleColour text-gray-900 text-2xl  font-bold underline py-2">Approved Services</p>
-   <div class="relative overflow-auto shadow-md sm:rounded-lg">
+   <div class="relative overflow-auto shadow-md sm:rounded-lg" id="approved">
       <table class="w-full text-sm text-left text-gray-500 ">
-          <thead class="text-xs text-gray-100 uppercase bg-gray-700 ">
+          <thead class="text-xs text-gray-100 uppercase bg-green-700 ">
               <tr>
                   <th scope="col" class="px-3 py-3">
                      Index
