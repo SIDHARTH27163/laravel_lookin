@@ -224,22 +224,22 @@
                         </button>
                     </div>
                     <hr class="mb-2 border-t" />
-                    <div class="text-center">
+                    {{-- <div class="text-center">
                         <a href="forgotpassword.php"
                             class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
                             href="#">
                             Forgot Password?
                         </a>
-                    </div>
-                    <div class="text-center">
+                    </div> --}}
+                    {{-- <div class="text-center">
                         <a class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
                             href="/seller_signup">
                             Create Account As Seller / Register As seller
                         </a>
-                    </div>
+                    </div> --}}
                     <div class="text-center">
                         <a class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800"
-                            href="/signin.php">
+                            href="/signin">
                             Already have an account? Login!
                         </a>
                     </div>

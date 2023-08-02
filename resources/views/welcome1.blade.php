@@ -150,6 +150,66 @@
 </section>
 
 {{-- list sercices starts --}}
+<section class="p-2 w-full">
+    
+    <div class="  p-2 w-full overflow-hidden">
+        <h1 class="text-xl leading-tight  font-bold transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer text-center duration-400 text-orange-400 ">
+           Services In Lookin Dharamshala</h1>
+            <h1 class="text-3xl leading-tight text-gray-900  font-bold transform transition hover:scale-105 duration-500 ease-in-out cursor-pointer text-center duration-400 hover:text-yellow-400 ">
+                Services We Provide In Lookin Dharamshala</h1>
+            <div class="flex items-center justify-center">
+                <p class="text-gray-700  text-base lg:w-3/4 md:w-3/4 sm:w-full w-full cursor-pointer lg:text-center md:text-center sm:text-justify text-justify">
+                    Lookin Dharamshala is a cutting-edge multi-service platform that offers a diverse range of conveniences and solutions for travelers and residents alike. From hassle-free accommodation bookings in picturesque Dharamshala to personalized travel itineraries, local tour guidance, and curated experiences, Lookin Dharamshala serves as the ultimate one-stop destination for all your travel needs.
+                        </p> 
+        </div>
+       </div>
+    <div class="container m-1 mx-auto px-4 ">
+        <div class="flex flex-wrap -mx-1 lg:-mx-4">
+            @foreach ($services as $i=> $service)
+<!-- Column -->
+<div class="my-2 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 ">
+    
+    <!-- Article -->
+    <article class="overflow-hidden rounded-xl shadow-lg shadow-sky-200 ">
+
+        <a href={{$service->page_link }}>
+            <img alt= {{ $service->service_name."Lookin Dharamshala"}} class="block h-64 w-full transform transition hover:scale-105 duration-500 ease-in-out" src="{{ asset('service_images/'.$service->image) }}">
+        </a>
+
+        <header class="flex items-center justify-between leading-tight p-1">
+            <h1 class="text-lg font-bold">
+                <a class="no-underline hover:underline text-black" href={{ $service->page_link }}>
+                   {{ $service->service_name }}
+                </a>
+            </h1>
+           
+        </header>
+
+        <footer class="flex items-center justify-between leading-none p-1">
+            <a class="flex items-center no-underline hover:underline text-black" href={{ $service->page_link }}>
+                <img alt= {{ $service->service_name."Lookin Dharamshala"}} class="block rounded-full h-10 w-10 transform transition hover:scale-105 duration-500 ease-in-out" src="{{ asset('service_images/'.$service->image) }}">
+                <p class="ml-2 text-sm">
+                    {{ $service->service_name }}
+                </p>
+            </a>
+          
+        </footer>
+
+    </article>
+    <!-- END Article -->
+
+</div>
+<!-- END Column -->
+            @endforeach
+            
+    
+            <!-- Column -->
+            
+    
+        </div>
+        {!! $services->links() !!}
+    </div>
+</section>
 
 {{-- list services ends --}}
 {{-- section for crousel ends --}}

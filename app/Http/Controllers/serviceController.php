@@ -184,4 +184,23 @@ try{
     dd($e);
 }
 }
+public function accommodation(){
+    try{
+       return view('accommodation.accommodation');
+    }catch(\Exception $e){
+        dd($e);
+    }
+    }
+
+
+
+
+    // add service
+    public function add_service_details(){
+        try{
+            return view('seller.add_service_details');
+         }catch(\Exception $e){
+             dd($e);
+         }
+    }
 }

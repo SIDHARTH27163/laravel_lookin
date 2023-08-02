@@ -11,6 +11,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\usersController;
 use App\Http\Controllers\serviceController;
+use App\Http\Controllers\footerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -129,7 +130,7 @@ Route::get('delete_service_cat/{id}',[serviceController::class , 'delete_service
 Route::get('seller',function(){
     return view('seller.seller_index');
 })->name('seller')->middleware('seller');
-
+Route::get('add_service_details', [serviceController::class, 'add_service_details'])->name('add_service_details');
 
 
 
@@ -169,7 +170,7 @@ Route::get('aboutus', function () {
 Route::get('contactus', function () {
     return view('footer.contact');
 });
-
+Route::post('contact_us' , [footerController::class,'contactus']);
 
 
 // footer components ends
@@ -206,3 +207,12 @@ Route::get('request_admin',function(){
 Route::get('blog_comments',function(){
     return view('user.user_notifications');
 })->name('blog_comments')->middleware('user');
+
+
+
+// accommodations starts
+
+Route::get('accommodation' ,[serviceController::class , 'accommodation'])->name('accommodation');
+
+
+// accommodations ends
