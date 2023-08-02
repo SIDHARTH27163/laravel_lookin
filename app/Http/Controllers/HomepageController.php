@@ -147,7 +147,7 @@ public function filter_blogs($filter){
         return view('blogs.search_blogs', [ 'filter_data'=>$filter_data , 'message'=>'', 'cats'=>$cats, 'locs'=>$locs]);
         else
             //return ( 'No Result found for' .$filter .' try Another filter');
-            $message='No Result found for location or category named ' .$filter .' Try Another filter';
+            $message='No Result found for location or category named ' .$q .' Try Another search query ';
             return view('blogs.search_blogs', [ 'message'=>$message ,'filter_data'=>$filter_data,  'cats'=>$cats, 'locs'=>$locs]);
     }
             catch(\Exception $e){

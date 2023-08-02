@@ -67,6 +67,13 @@
 
 </section>
 <section class="relative z-10 overflow-hidden bg-white py-2 lg:py-2 lg:px-20 md:px-20 sm:px-10 px-8">
+  @if (session()->has('success'))
+  <div id="toast-top-right"
+      class="fixed flex items-center w-full max-w-xs p-4 space-x-4 text-gray-100 bg-green-600 divide-x  rounded-lg shadow top-5 right-5 dark:text-gray-400 dark:divide-gray-700 space-x dark:bg-gray-800"
+      role="alert">
+      <div class="text-sm font-normal">{{ session()->get('success') }}</div>
+  </div>
+@endif
     <div class="container mx-auto py-2">
       <div class="-mx-4 flex flex-wrap lg:justify-between">
         <div class="w-full px-4 lg:w-1/2 xl:w-6/12">
@@ -157,7 +164,9 @@
         </div>
         <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
           <div class="relative rounded-lg bg-white p-8 shadow-lg sm:p-12">
-            <form action="" method="post">
+            <form action="contact_us" method="post">
+               @csrf
+                    @method('post')
               <div class="mb-6">
                 <input
                   type="text"
@@ -165,16 +174,20 @@
                   placeholder="Your Name"
                   class="text-body-color border-sky-600 focus:border-blue-800 w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                 />
-                
+                @if ($errors->has('name'))
+                <p class="text-xs italic text-red-500 text-start font-semibold">{{ $errors->first('name') }}</p>
+            @endif
               </div>
               <div class="mb-6">
                 <input
-                  type="email"
+                  type="text"
                   name="email"
                   placeholder="Your Email"
                   class="text-body-color border-sky-600 focus:border-blue-800 w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                 />
-              
+                @if ($errors->has('email'))
+                <p class="text-xs italic text-red-500 text-start font-semibold">{{ $errors->first('email') }}</p>
+            @endif
               </div>
               <div class="mb-6">
                 <input
@@ -183,7 +196,9 @@
                   placeholder="Your Phone"
                   class="text-body-color border-sky-600 focus:border-blue-800 w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                 />
-              
+                @if ($errors->has('phone'))
+                <p class="text-xs italic text-red-500 text-start font-semibold">{{ $errors->first('phone') }}</p>
+            @endif
               </div>
               <div class="mb-6">
                 <textarea
@@ -192,7 +207,9 @@
                   placeholder="Your Message"
                   class="text-body-color border-sky-600 focus:border-blue-800 w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                 ></textarea>
-                
+                @if ($errors->has('message'))
+                <p class="text-xs italic text-red-500 text-start font-semibold">{{ $errors->first('message') }}</p>
+            @endif
               </div>
               <div>
                 <button

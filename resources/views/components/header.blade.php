@@ -37,9 +37,9 @@
             <li class="mr-0">
               <a id="navitem2" class="toggleColour3 hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  transform transition hover:scale-105 duration-500 ease-in-out py-2 px-4 font-bold" href="/tourist_places">Tourist Places</a>
             </li>
-            <li class="mr-0">
+            {{-- <li class="mr-0">
               <a id="navitem1" class="toggleColour6 hover:bg-slate-900 hover:text-white text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  transform transition hover:scale-105 duration-500 ease-in-out py-2 px-4 font-bold" href="/services">Services</a>
-            </li>
+            </li> --}}
             @if(session()->has('user'))
             <li class="mr-0">
               <a id="navitem3" class="toggleColour4  text-white hover:bg-slate-900 hover:text-white inline-block text-lg hover:shadow-lg hover:rounded-xl  no-underline  transform transition hover:scale-105 duration-500 ease-in-out py-2 px-4 font-bold" href="/home">Dashboard</a>
